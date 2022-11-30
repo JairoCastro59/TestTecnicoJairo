@@ -8,7 +8,7 @@ import com.example.core.base.activity.BaseActivity
 import com.example.testtecnicojairo.databinding.ActivitySplashBinding
 import com.example.testtecnicojairo.splash.viewModel.SplashViewModel
 import com.example.material.delegates.viewBinding
-import com.example.testtecnicojairo.dashboard.main.view.DashboardActivity
+import com.example.testtecnicojairo.dashboard.framework.presentation.main.view.DashboardActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @SuppressLint("CustomSplashScreen")

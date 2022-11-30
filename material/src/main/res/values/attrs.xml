@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Styleable for ErrorViewComponent-->
+    <declare-styleable name="ErrorViewComponent">
+        <attr name="widthCloseButton" format="boolean" />
+    </declare-styleable>
+</resources>

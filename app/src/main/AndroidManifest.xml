@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".TestTecnicoJairoApplication"
         android:allowBackup="true"
+        android:usesCleartextTraffic="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".dashboard.main.view.DashboardActivity"
+            android:name=".dashboard.framework.presentation.main.view.DashboardActivity"
             android:exported="true">
 
             <meta-data

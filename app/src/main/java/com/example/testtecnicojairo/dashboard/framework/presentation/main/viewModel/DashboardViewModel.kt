@@ -1,4 +1,4 @@
-package com.example.testtecnicojairo.dashboard.main.viewModel
+package com.example.testtecnicojairo.dashboard.framework.presentation.main.viewModel
 
 import android.os.Bundle
 import com.example.core.base.viewModel.BaseViewModel
