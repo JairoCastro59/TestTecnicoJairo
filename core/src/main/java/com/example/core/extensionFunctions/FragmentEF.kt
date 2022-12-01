@@ -12,7 +12,6 @@ import androidx.viewbinding.ViewBinding
 import com.example.core.base.fragment.BaseFragment
 import com.example.core.base.viewModel.BaseViewModel
 import com.example.core.framework.presentation.dialog.FullScreenErrorDialog
-import com.example.material.components.errorView.ErrorViewComponent
 import com.example.material.model.Error
 
 
@@ -64,28 +63,9 @@ fun <VB : ViewBinding, VM : BaseViewModel> BaseFragment<VB, VM>.navigateToSectio
 }
 
 fun <VB : ViewBinding, VM : BaseViewModel> BaseFragment<VB, VM>.showGenericError(
-    error: Error,
-    actionFunction: (() -> Unit)? = null
+    error: Error
 ) {
-    FullScreenErrorDialog().apply {
-        onRetryErrorListener = object : ErrorViewComponent.OnRetryActionErrorListener {
-            override fun doOnRetryError(actionId: Int) {
-                if (actionFunction != null) {
-                    actionFunction.invoke()
-                    return
-                }
-                //this@showGenericError.viewModel.onDefaultErrorAction(action)
-            }
-        }
-        this.error = error
-        closeImageCloseVisible = true
-        onCloseErrorListener = object : ErrorViewComponent.OnCloseErrorListener {
-            override fun doOnClose(actionId: Int) {
-                dismiss()
-                activity?.onBackPressed()
-            }
-        }
-    }.also {
+    FullScreenErrorDialog(error).also {
         it.show(childFragmentManager)
         childFragmentManager.executePendingTransactions()
         it.dialog?.setOnDismissListener {

@@ -1,10 +1,13 @@
-package com.example.testtecnicojairo.dashboard.framework.di
+package com.example.testtecnicojairo.dagger
 
 import com.example.testtecnicojairo.BuildConfig
 import com.example.testtecnicojairo.dashboard.constants.DashboardConstants
 import com.example.testtecnicojairo.dashboard.data.dataSource.TopRatedMoviesDataSource
 import com.example.testtecnicojairo.dashboard.framework.data.config.retrofit.DashboardApiService
 import com.example.testtecnicojairo.dashboard.framework.data.implementation.TopRatedMoviesDataSourceImpl
+import com.example.testtecnicojairo.splash.data.dataSource.SessionDataSource
+import com.example.testtecnicojairo.splash.framework.data.config.retrofit.SessionApiService
+import com.example.testtecnicojairo.splash.framework.data.implementation.SessionDataSourceImpl
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Module
 import dagger.Provides
@@ -60,7 +63,16 @@ object DashboardModule {
 
     @Provides
     @Singleton
+    fun provideSessionApiService(retrofit: Retrofit) = retrofit.create(SessionApiService::class.java)
+
+    @Provides
+    @Singleton
     fun provideTopRatedMovies(topRatedMoviesDataSourceImpl: TopRatedMoviesDataSourceImpl):
             TopRatedMoviesDataSource = topRatedMoviesDataSourceImpl
+
+    @Provides
+    @Singleton
+    fun provideSessionId(sessionDataSourceImpl: SessionDataSourceImpl):
+            SessionDataSource = sessionDataSourceImpl
 
 }

@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#f1f1f1">
+    android:layout_height="match_parent">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/closeImageView"
@@ -43,7 +42,8 @@
             android:layout_marginHorizontal="@dimen/grid_2"
             android:layout_marginTop="@dimen/grid_6_0"
             android:gravity="left"
-            android:textAppearance="?textAppearanceHeadline2"
+            android:textStyle="bold"
+            android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alertImageView"
@@ -56,26 +56,13 @@
             android:layout_marginHorizontal="@dimen/grid_2"
             android:layout_marginTop="@dimen/grid_2"
             android:gravity="left"
-            android:textAppearance="?textAppearanceBody1"
+            android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/titleOutputText"
             tools:text="Por motivos de seguridad, no puedes acceder a esta información. " />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <Button
-        android:id="@+id/retry"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/grid_2"
-        android:layout_marginEnd="@dimen/grid_2"
-        android:layout_marginBottom="@dimen/grid_2"
-        android:layout_weight="1"
-        android:text="@string/try_again"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSup"

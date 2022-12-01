@@ -17,7 +17,7 @@
         android:theme="@style/Theme.TestTecnicoJairo"
         tools:targetApi="31">
         <activity
-            android:name=".splash.view.SplashActivity"
+            android:name=".splash.framework.presentation.view.SplashActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">

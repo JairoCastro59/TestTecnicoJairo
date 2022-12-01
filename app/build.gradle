@@ -75,4 +75,14 @@ dependencies {
     //Lottie
     implementation "com.airbnb.android:lottie:$lottieVersion"
 
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+    // Room components
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    implementation("androidx.room:room-ktx:$roomVersion")
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
 }

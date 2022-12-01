@@ -46,7 +46,6 @@ class ErrorViewComponent @JvmOverloads constructor(
             )
         )
         typedArray.recycle()
-        binding.retry.setOnClickListener(this)
         binding.closeImageView.setOnClickListener(this)
     }
 
@@ -62,35 +61,8 @@ class ErrorViewComponent @JvmOverloads constructor(
         binding.closeImageView.setVisibility(visible)
     }
 
-    fun setError(error: Error) {
-        this.error = error
-
-        binding.alertImageView.setImageResource(error.icon)
-
-        binding.titleOutputText.text =
-            if (error.titleRes != null)
-                ""
-            else
-                error.title?:""
-
-        binding.messageOutputText.text =  if (error.messageRes != null)
-            ""
-        else
-            error.message?:""
-
-        binding.retry.text = if(error.action?.actionName != null)
-            ""
-        else
-            error.action?.actionString?:""
-    }
-
     override fun onClick(view: View?) {
         when (view?.id) {
-            R.id.retry-> error?.action?.actionId?.let {
-                onRetryActionErrorListener?.doOnRetryError(
-                    it
-                )
-            }
             R.id.closeImageView -> error?.action?.actionId?.let {
                 onCloseErrorListener?.doOnClose(
                     it

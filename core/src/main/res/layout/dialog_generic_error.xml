@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1f1f1">
+    android:background="#FFF">
 
-    <com.example.material.components.errorView.ErrorViewComponent
-        android:id="@+id/genericErrorComponent"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/closeImageView"
+        android:layout_width="@dimen/grid_2"
+        android:layout_height="@dimen/grid_2"
+        android:src="@drawable/ic_close_blue"
+        android:layout_marginTop="@dimen/grid_5_5"
+        android:layout_marginEnd="@dimen/grid_2_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:widthCloseButton = "false"
-        />
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineSup"
+        app:layout_constraintVertical_bias="0.0">
 
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/alertImageView"
+            android:layout_width="@dimen/dp_68"
+            android:layout_height="@dimen/dp_68"
+            android:layout_marginStart="@dimen/grid_3"
+            android:src="@drawable/ic_feedback_warning"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/titleOutputText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_6_0"
+            android:gravity="left"
+            android:textStyle="bold"
+            android:textColor="#000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/alertImageView"
+            tools:text="No tienes acceso a esta área" />
+
+        <TextView
+            android:id="@+id/messageOutputText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/grid_2"
+            android:layout_marginTop="@dimen/grid_2"
+            android:gravity="left"
+            android:textColor="#000"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleOutputText"
+            tools:text="Por motivos de seguridad, no puedes acceder a esta información. " />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2182" />
 </androidx.constraintlayout.widget.ConstraintLayout>
