@@ -5,6 +5,10 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-android-extensions'
     id 'kotlin-kapt'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    id "com.google.gms.google-services"
+
+
 }
 
 android {
@@ -84,5 +88,10 @@ dependencies {
     kapt "androidx.room:room-compiler:$roomVersion"
     implementation("androidx.room:room-ktx:$roomVersion")
     androidTestImplementation "androidx.room:room-testing:$roomVersion"
+
+    // Google Maps Location Services
+    implementation "com.google.android.gms:play-services-maps:$mapsVersion"
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
 
 }

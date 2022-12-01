@@ -9,4 +9,8 @@
         android:id="@+id/moviesFragment"
         android:title="@string/movies_title_menu"
         android:icon="@drawable/ic_movies"/>
+    <item
+        android:id="@+id/mapFragment"
+        android:title="@string/map_title_menu"
+        android:icon="@drawable/ic_map"/>
 </menu>

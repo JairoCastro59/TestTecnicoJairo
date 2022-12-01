@@ -45,7 +45,7 @@ class SplashViewModel @Inject constructor(
                 getSession = true
                 navigateToDasboardScreen()
                 logInfo(it)
-            } ?: getSessionId()
+            } //?: getSessionId()
         }
     }
 
@@ -70,6 +70,7 @@ class SplashViewModel @Inject constructor(
 
     fun animationEnd() {
         animationEnd = true
+        getSession = true
         navigateToDasboardScreen()
     }
 }

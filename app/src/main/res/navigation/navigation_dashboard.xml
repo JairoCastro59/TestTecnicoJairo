@@ -13,4 +13,16 @@
         android:id="@+id/profileFragment"
         android:name="com.example.testtecnicojairo.dashboard.profile.view.ProfileFragment"
         android:label="ProfileFragment"/>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.testtecnicojairo.dashboard.framework.presentation.maps.view.MapFragment"
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/action_mapFragment_to_permissionRequestFragment"
+            app:destination="@id/permissionRequestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/permissionRequestFragment"
+        android:name="com.example.testtecnicojairo.dashboard.framework.presentation.maps.view.PermissionRequestFragment"
+        android:label="PermissionRequestFragment" />
 </navigation>
